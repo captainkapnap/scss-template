@@ -1,0 +1,15 @@
+@use '../abstracts/' as *;
+
+.card-auto-center-content {
+    display: grid;
+    // 3 rows
+    grid-template-rows: auto 1fr auto;
+
+    // card__body is the text on the card... main body, want it centered.
+    &__body {
+        display: flex;
+        align-items: center;
+        padding: $padding-card-body;
+    }
+
+}
