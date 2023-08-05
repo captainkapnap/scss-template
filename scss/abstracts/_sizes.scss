@@ -9,16 +9,16 @@ $sizes: (
 
 
 // going to want to flesh these out more for default templates
-$padding-hero: 20rem;
+$padding-hero: clamp(15rem, 15vh, 20rem);
 
-$padding-section: 7rem;
+$padding-section: clamp(3rem, 10vh, 7rem);
 
-$padding-card-body: 5rem;
+$padding-card-body: clamp(2rem, 3.5vw, 5rem);
 
 
 $container-inline-padding: 1rem;
-$container-max-width: 77.75rem;
-$container-max-width-wide: 100rem;
+$container-max-width: 60rem;
+$container-max-width-wide: 75rem;
 
 $grid-gap: 1.5rem;
 $flex-gap: 1em
