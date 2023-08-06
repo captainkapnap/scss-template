@@ -1,8 +1,9 @@
+$ff-sans: "Open Sans", sans-serif;
+$ff-serif: "Abril Fatface", serif;
+
 $ff-base: $ff-sans;
 $ff-accent: $ff-serif;
 
-$ff-sans: "Open Sans", sans-serif;
-$ff-serif: "Abril Fatface", serif;
 
 $font-sizes: (
   900: clamp(2.5rem, 0.5rem + 10vw, 5rem),
@@ -11,6 +12,7 @@ $font-sizes: (
   500: 1.3125rem,
   400: 1.125rem,
   300: 1rem,
+  1000: 6.2rem,
 );
 
 $fw-400: 400;

@@ -5,6 +5,7 @@ $sizes: (
   20: 1.25rem,
   32: 2rem,
   36: 2.25rem,
+  100: 6.25rem,
 );
 
 
@@ -21,4 +22,5 @@ $container-max-width: 60rem;
 $container-max-width-wide: 75rem;
 
 $grid-gap: 1.5rem;
-$flex-gap: 1em
+$flex-gap: 1em;
+$flex-group-gap: 0.5em;

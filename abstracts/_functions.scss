@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use 'colors' as *;
-@use 'typograph' as *;
+@use 'typography' as *;
 @use 'sizes' as *;
 
 @function clr($color, $shade) {
@@ -12,7 +12,7 @@
 }
 
 
-@function fs($font-sizes) {
+@function fs($font-size) {
   @if map.has-key($font-sizes, $font-size) {
     @return map.get($font-sizes, $font-size);
   } @else {

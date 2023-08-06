@@ -1,9 +1,0 @@
-// The order of the imports is important, with the order you put them here being the order 
-// the styles will be in the compiled CSS. If you’re overwriting your vendor styles (say 
-// you’re using Boostrap, and then modifying it in your own styles), then you would want to import that first.
-
-@use 'base';
-@use 'components';
-@use 'layout';
-@use 'utilities';
-@use 'vendor';
