@@ -1,0 +1,115 @@
+@use '../abstracts/' as *;
+@use 'sass:map';
+
+.input_remove_formatting {
+    outline: none;
+    background: none;
+    border: none;
+    box-shadow: none;
+    appearance: none; /* for some browsers to remove default styling */
+    -webkit-appearance: none; /* for older versions of Safari */
+    -moz-appearance: none; /* for Firefox */
+    font-family: inherit; /* To make it use the same font as its parent */
+    font-size: inherit; /* To make it use the same font size as its parent */
+    color: inherit; /* To make it use the same color as its parent */
+}
+
+.input_label_remove_formatting {
+    display: inline; /* to ensure it doesn't take the full width, but this is typically the default */
+    margin: 0; /* remove default margins */
+    padding: 0; /* remove default padding */
+    font-family: inherit; /* use the font of its parent */
+    font-size: inherit; /* use the font size of its parent */
+    font-weight: normal; /* to remove any default bold styling */
+    color: inherit; /* use the color of its parent */
+    text-transform: none; /* ensures text isn't transformed, though not usually necessary for labels */
+    cursor: inherit; /* so it doesn't always show the pointer cursor */
+    user-select: none;
+}
+
+// ================ INPUT WITH LABEL THAT MOVES ON FOCUS ================
+// Insipiration: https://twitter.com/davidm_ml/status/1685554877978537984/photo/2
+// ******************************************************
+// If you adjust the font size of height of the input box (100% of wrapper)
+// you need to adjust the translate %s.
+// ******************************************************
+
+.input-label-move {
+    $border-radius: 1rem;
+    $root: &;
+    $transitionNum: 2;
+    $translate2MidOfInput: -165%;
+    $translateLabel2Top: -290%;
+
+
+    &__wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: $border-radius;
+
+    }
+
+    &__field {
+        background: clr(neutral, 100);
+        border-radius: $border-radius;
+        padding-inline: 1em;
+        padding-block: 1.5em 1em;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0 0 0 0px transparent; // add initial transparent box-shadow
+        transition: box-shadow 600ms ease-in;
+
+       &:hover {
+            box-shadow: inset 0 0 0 2px clr(neutral, 400); // change outline to box-shadow
+            transition: box-shadow 200ms ease-in;
+        }
+
+        &:focus {
+            box-shadow: inset 0 0 0 2px clr(neutral, 900); // change outline to box-shadow
+            transition: box-shadow 600ms ease-in;
+
+        }
+        
+        // Adjust label when inputbox is clicked / focused
+        &:focus ~ #{$root}__label {
+            font-size: 0.8em;
+            transform: translate(1em, $translateLabel2Top);
+            transition: transform 150ms map.get($typeOfTransition, $transitionNum), font-size 150ms linear;
+        }
+
+        &:focus ~ #{$root}__icon {
+            color: clr(neutral, 900);
+            scale: 1.07;
+            transition: color 250ms ease-in, scale 250ms ease-in;
+        }
+        
+
+        &::placeholder {
+            color: transparent;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        color: clr(neutral, 400);
+        display: block;
+        transform: translate(1em, $translate2MidOfInput);
+        transition: transform 250ms map.get($typeOfTransition, $transitionNum), font-size 150ms linear;
+        transform-origin: center;
+        white-space: nowrap;
+    }
+
+    &__icon {
+        position: absolute;
+        color: clr(neutral, 400);
+        background-color: clr(neutral,100);
+        display: block;
+        right: 0;
+        transform: translate(-1em, $translate2MidOfInput);
+        transform-origin: center;
+        cursor: pointer;
+        scale: 1;
+        transition: scale 250ms ease-in;
+    }
+}
+

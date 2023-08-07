@@ -10,3 +10,10 @@ $colors: (
     900: darkblue,
   ),
 );
+
+
+$inputbox-colors: (
+    "bg": clr(neutral, 100),
+    "text": clr(neutral, 400),
+    "outline": clr(neutral, 900),
+)
