@@ -89,6 +89,12 @@
         }
     }
 
+    &__notEmpty ~ #{$root}__label {
+        font-size: 0.8em;
+        transform: translate(1em, $translateLabel2Top);
+        transition: transform 150ms map.get($typeOfTransition, $transitionNum), font-size 150ms linear;
+    }
+
     &__label {
         position: absolute;
         color: clr(neutral, 400);

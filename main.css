@@ -87,6 +87,11 @@ body.main-body {
 .input-label-move__field::placeholder {
   color: transparent;
 }
+.input-label-move__notEmpty ~ .input-label-move__label {
+  font-size: 0.8em;
+  transform: translate(1em, -290%);
+  transition: transform 150ms ease-in, font-size 150ms linear;
+}
 .input-label-move__label {
   position: absolute;
   color: gray;
