@@ -1,5 +1,7 @@
 $breakpoints: (
-    small: 30em,
-    medium: 45em,
-    large: 65em,
+    phone-only: 599px,
+    tablet-p-and-up: 600px,
+    tablet-l-and-up: 900px,
+    desktop-and-up: 1200px,
+    big-desktop-and-up: 1800px,
 )

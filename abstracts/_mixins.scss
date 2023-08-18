@@ -6,10 +6,19 @@
 @mixin mq($size) {
   @if map.has-key($breakpoints, $size) {
     $breakpoint: map-get($breakpoints, $size);
-    @media screen and (min-width: $breakpoint) {
-      @content;
+
+    @if $size == "phone-only" {
+      @media screen and (max-width: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width: $breakpoint) {
+        @content;
+      }
     }
+
   } @else if meta.type-of($size) == number {
+
     @if math.is-unitless($size) {
       @error 'when using a number with @mq() make sure to include a unit';
     } @else {
@@ -17,7 +26,16 @@
         @content;
       }
     }
+
   } @else {
     @error 'the keyword #{$size} is not in the $breakpoints map';
   }
+}
+
+@mixin scss_flex($direction: row, $justify: center, $align: center, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
 }

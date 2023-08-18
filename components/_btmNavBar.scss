@@ -1,0 +1,15 @@
+@use '../abstracts/' as *;
+
+.btmNavBar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+    @include mq(phone-only) {
+        height: 10dvh;
+    }
+
+    @include mq(tablet-p-and-up) {
+        height: 10dvh;
+    }
+}
