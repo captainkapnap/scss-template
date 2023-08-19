@@ -8,6 +8,13 @@ $sizes: (
   100: 6.25rem,
 );
 
+$clamp-sizes: (
+  sm: clamp(0.5em, 0.6em + 5vw, 0.7em),
+  md: clamp(0.4em, 0.6em + 5vw, 0.9em),
+  lg: clamp(0.8em, 1.0em + 5vw, 1.2em),
+  xl: clamp(1.0em, 1.2em + 5vw, 1.4em),
+);
+
 
 // going to want to flesh these out more for default templates
 $padding-hero: clamp(15rem, 15vh, 20rem);

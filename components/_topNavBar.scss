@@ -1,0 +1,15 @@
+@use '../abstracts/' as *;
+
+.topNavBar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    
+    @include mq(phone-only) {
+        height: 8dvh;
+    }
+
+    @include mq(tablet-p-and-up) {
+        height: 8dvh;
+    }
+}

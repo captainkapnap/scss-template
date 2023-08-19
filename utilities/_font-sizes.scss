@@ -1,7 +1,32 @@
 @use "../abstracts" as *;
+@use "sass:map";
 
 @each $size-name, $size-value in $font-sizes {
   .fs-#{$size-name} {
     font-size: $size-value;
+  }
+}
+
+@each $clamp-name, $clamp-value in $clamp-sizes {
+  .fs-clamp-#{$clamp-name} {
+    font-size: $clamp-value;
+  }
+}
+
+.fs-clamp-resp {
+  @include mq(phone-only) {
+    font-size: map.get($clamp-sizes, sm)
+  }
+  @include mq(tablet-p-and-up) {
+    font-size: map.get($clamp-sizes, md)
+  }
+  @include mq(tablet-l-and-up) {
+    font-size: map.get($clamp-sizes, lg)
+  }
+  @include mq(desktop-and-up) {
+    font-size: map.get($clamp-sizes, xl)
+  }
+  @include mq(big-desktop-and-up) {
+    font-size: map.get($clamp-sizes, xl)
   }
 }
