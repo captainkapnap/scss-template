@@ -1,8 +1,6 @@
 @use '../abstracts/' as *;
 
 .btmNavBar {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     
     @include mq(phone-only) {
