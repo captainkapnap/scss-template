@@ -16,4 +16,23 @@ $inputbox-colors: (
     "bg": clr(neutral, 100),
     "text": clr(neutral, 400),
     "outline": clr(neutral, 900),
-)
+);
+
+$colors-tabulator: (
+  lightMode: (
+    primary: #d4d0b3,
+    highlight: #bb4003,
+    accent: #e8bd0f,
+    border: #8c8f8d,
+    detail: #1d1312,
+    title: #0d0808,
+    ),
+    darkMode: (
+      primary: #0d0e10,
+      highlight: #bb4003,
+      accent: #e8bd0f,
+      border: #8c8f8d,
+      detail: #1d1312,
+      title: #fbfefc,
+  )
+);
