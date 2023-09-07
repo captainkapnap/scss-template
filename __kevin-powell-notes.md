@@ -1,3 +1,9 @@
+## installing sass & running watch
+npm i -g sass
+dir src/styles
+sass --watch .\scss-template\main.scss scss.css
+
+
 ### Abstracts
 As we’ve talked about a fair deal so far, abstracts are things like variables and mixins that aren’t directly compiled to CSS, but instead are used in other places.
 
